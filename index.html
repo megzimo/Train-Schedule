@@ -8,64 +8,101 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/train.css">
-    <title>Train Schedule</title>
-</head>
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
 
-<body>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyD2qq6w0ssoJPBc2O1siJg6b0HLApWbUn0",
+            authDomain: "train-9f8d7.firebaseapp.com",
+            databaseURL: "https://train-9f8d7.firebaseio.com",
+            projectId: "train-9f8d7",
+            storageBucket: "",
+            messagingSenderId: "673121910182"
+        };
+        firebase.initializeApp(config);    
+    </script>
+    </head>
 
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">Train Schedule</h1>
-            <p class="lead">Where ever you need to go, we'll take you.</p>
+    <body>
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Train Schedule</h1>
+                <p class="lead">Where ever you need to go, we'll take you.</p>
+                <p id="current-time"></p>
+            </div>
         </div>
-    </div>
 
-    <div class="card">
-        <div class="card-header">
-            Current Train Schedule
-        </div>
-        <div class="card-body">
-            <table class="table">
-                <thead class="thead">
-                    <tr>
-                        <th scope="col">Train Name</th>
-                            <p><th scope="col" id="name-input"></th></p>
-                        <th scope="col">Destination</th>
-                            <p><th scope="col" id="destination-input"></th></p>
-                        <th scope="col">Frequency</th>
-                            <th scope="col" id="freq-input"></th>
-                        <th scope="col">First Train</th>
-                            <th scope="col" id="first-train-input"></th>
-                        <th scope="col">Next Arrival</th>
-                            <th scope="col" id="next-arrival-input"></th>
-                        <th scope="col">Minutes Away</th>
-                            <th scope="col" id="minutes-input"></th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-    </div>
+        <div class="row">
+            <div class="col-12 train-cards">
+                <div class="card">
+                    <div class="card-header train-header">
+                        Train Schedule
+                    </div>
+                    <div class="card-body">
+                        <div id="train-schedule"></div>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Frequency</th>
+                                    <th scope="col">First Train</th>
+                                    <th scope="col">Next Arrival</th>
+                                    <th scope="col">Minutes Away</th>
 
-    <div class="card">
-        <div class="card-header">
-            Add A Train
+                                </tr>
+
+                            </thead>
+                            <tbody id="train-sched">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card-body">
-            <label class="input-title" for="name">Train Name</label>
-            <input type="input" class="form-control" id="name">
-            <label class="input-title" for="distination">Destination</label>
-            <input type="input" class="form-control" id="destination">
-            <label class="input-title" for="train-time">First Train Time (HH:mm - military time)</label>
-            <input type="input" class="form-control" id="train-time">
-            <label class="input-title" for="freq">Frequency (min)</label>
-            <input type="input" class="form-control" id="freq">
+        <div class="row">
+            <div class="col-12 train-cards">
+                <div class="card">
+                    <div class="card-header train-header">
+                        Add a Train
+                    </div>
+                    <div class="card-body">
+
+                        <form id="train-schedule">
+                            <div class="form-group">
+                                <label>Train Name</label>
+                                <input type="text" class="form-control" id="train-name" aria-describedby="emailHelp" placeholder="Train's Name">
+                            </div>
+                            <div class="form-group">
+                                <label>Destination</label>
+                                <input type="text" class="form-control" id="destination" placeholder="Where are you going?">
+                            </div>
+                            <div class="form-group">
+                                <label>First Train Time</label>
+                                <input type="time" class="form-control" id="first-train">
+                            </div>
+                            <div class="form-group">
+                                <label>Frequency (min)</label>
+                                <input type="number" class="form-control" id="frequency">
+                            </div>
+                            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                        </form>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button type="button" class="btn btn-secondary col-2">Submit</button>
-    </div>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/train.js"></script>
-</body>
+
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+        <script type="text/javascript" src="assets/js/train.js"></script>
+    </body>
 
 </html>
