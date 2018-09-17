@@ -9,7 +9,7 @@ $(function () {
 
         let name = $("#train-name").val().trim();
         let dest = $("#destination").val().trim();
-        let first = moment($("#first-train").val().trim(), "HH:mm").subtract(1, "years").format("X");
+        let first = moment($("#first-train").val().trim(), "hh:mm A").subtract(1, "years").format("X");
         console.log("first train type: ", typeof first)
         let freq = $("#frequency").val().trim();
 
@@ -46,7 +46,7 @@ $(function () {
        console.log("tnext: ", tNext)
 
 
-        $("#train-sched").append("<tr><td>" + tName + "</td><td>" + tDest + "</td><td>" + tFreq + "</td><td>" + tFirst + "</td><td>" + tNext + "</td><td>" + tMin + "</td></tr>");
+        $("#train-sched").append("<tr><td>" + tName + "</td><td>" + tDest + "</td><td>" + tFreq + "</td><td>" + tNext + "</td><td>" + tMin + "</td></tr>");
 
     })
 

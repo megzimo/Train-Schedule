@@ -22,87 +22,93 @@
         };
         firebase.initializeApp(config);    
     </script>
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-4">Train Schedule</h1>
-                <p class="lead">Where ever you need to go, we'll take you.</p>
-                <p id="current-time"></p>
-            </div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-3">Train Schedule</h1>
+            <p class="lead">Where ever you need to go, we'll take you.</p>
+            <p id="current-time"></p>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col-12 train-cards">
-                <div class="card">
-                    <div class="card-header train-header">
-                        Train Schedule
-                    </div>
-                    <div class="card-body">
-                        <div id="train-schedule"></div>
-                        <table class="table">
-                            <thead class="thead">
-                                <tr>
-                                    <th scope="col">Train Name</th>
-                                    <th scope="col">Destination</th>
-                                    <th scope="col">Frequency</th>
-                                    <th scope="col">First Train</th>
-                                    <th scope="col">Next Arrival</th>
-                                    <th scope="col">Minutes Away</th>
+    <div class="row">
+        <div class="col-10 train-cards">
+            <div class="card">
+                <div class="card-header train-header">
+                    Train Schedule
+                </div>
+                <div class="card-body">
+                    <div id="train-schedule"></div>
+                    <table class="table">
+                        <thead class="thead">
+                            <tr>
+                                <th scope="col">Train Name</th>
+                                <th scope="col">Destination</th>
+                                <th scope="col">Frequency</th>
+                                <th scope="col">Next Arrival</th>
+                                <th scope="col">Minutes Away</th>
 
-                                </tr>
+                            </tr>
 
-                            </thead>
-                            <tbody id="train-sched">
+                        </thead>
+                        <tbody id="train-sched">
 
-                            </tbody>
-                        </table>
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 train-cards">
-                <div class="card">
-                    <div class="card-header train-header">
-                        Add a Train
-                    </div>
-                    <div class="card-body">
-
-                        <form id="train-schedule">
+    </div>
+    <div class="row">
+        <div class="col-10 train-cards">
+            <div class="card">
+                <div class="card-header train-header">
+                    Add a Train
+                </div>
+                <div class="card-body display-sched">
+                    <form id="train-schedule">
+                        <div class="row">
                             <div class="form-group">
-                                <label>Train Name</label>
-                                <input type="text" class="form-control" id="train-name" aria-describedby="emailHelp" placeholder="Train's Name">
+                                <div class="col">
+                                    <label>Train Name</label>
+                                    <input type="text" class="form-control" id="train-name" aria-describedby="emailHelp" placeholder="Train's Name">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Destination</label>
-                                <input type="text" class="form-control" id="destination" placeholder="Where are you going?">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Destination</label>
+                                    <input type="text" class="form-control" id="destination" placeholder="Where are you going?">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>First Train Time</label>
-                                <input type="time" class="form-control" id="first-train">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>First Train Time</label>
+                                    <input type="time" class="form-control" id="first-train">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Frequency (min)</label>
-                                <input type="number" class="form-control" id="frequency">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Frequency (min)</label>
+                                    <input type="number" class="form-control" id="frequency">
+                                </div>
                             </div>
-                            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
-                        </form>
-
-                        </form>
-                    </div>
+                        </div>
+                        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 
 
 
-        </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-        <script type="text/javascript" src="assets/js/train.js"></script>
-    </body>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script type="text/javascript" src="assets/js/train.js"></script>
+</body>
 
 </html>

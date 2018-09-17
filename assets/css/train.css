@@ -16,3 +16,28 @@
     margin-left: 1em;
     margin-bottom: 1em;
 }
+
+body{
+    background-color: #151515;
+    background-image: url("../images/station.jpg");
+    background-repeat: no-repeat;
+    background-size: 97%;
+    background-position-x: center;
+    background-position-y: center;
+    }
+
+.jumbotron{
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    background-color: rgba(168,158,127, 0.9);
+    }
+
+.lead{
+    color: rgb(41,80,150);
+    font-weight: 400;
+}
+
+.train-cards{
+    margin: 0 auto;
+}
